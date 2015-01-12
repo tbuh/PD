@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app="PDWebApp">
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="app.js"></script>
+    <script src="Controllers/CustomerList.js"></script>
+    <link rel="stylesheet" href="Content/bootstrap.css" /> 
+    <link rel="stylesheet" href="Content/default.css" />
+</head>
+<body ng-controller="CustomerList">
+    <h1>TypeScript HTML App</h1>
+
+    <div class="vid">
+        <div class="panel">
+            <div class="panel-header">
+                Search or create member / company
+            </div>
+            <div class="panel-body">
+                <form method="POST" class="form-inline" role="form">
+                    <div class="form-group">
+                        <label for="input-cvr-cpr">CPR/CVR</label><br>
+                        <input name="input-cvr-cpr" class="form-control" value="{{customerSearch.cpr_cvr}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-p-no">P-no.</label><br>
+                        <input name="input-p-no" class="form-control" value="{{customerSearch.p_no}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-customer-id">Customer id</label><br>
+                        <input name="input-customer-id" class="form-control" value="{{customerSearch.customerId}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-firstname">Firstname</label><br>
+                        <input name="input-firstname" class="form-control" value="{{customerSearch.firstname}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-lastname">Lastname</label><br>
+                        <input name="input-lastname" class="form-control" value="{{customerSearch.lastname}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="input-street-name">Street name</label><br>
+                        <input name="input-street-name" class="form-control" value="{{customerSearch.streetname}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-no">No.</label><br>
+                        <input name="input-no" class="form-control" value="{{customerSearch.num}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-postcode">Postcode</label><br>
+                        <input name="input-postcode" class="form-control" value="{{customerSearch.postCode}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-country">Country</label><br>
+                        <select name="input-country" class="form-control" style="width: 178px">
+                            <option>not selected</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="pull-right">
+                        <input type="reset" class="btn btn-primary" value="Reset">
+                        <input type="submit" class="btn btn-primary" value="Search" ng-click="searchCustomers()">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="search-list">
+            <table class="search-list-table">
+                <thead>
+                    <tr>
+                        <th>CRP</th>
+                        <th>CVR</th>
+                        <th>P-no.</th>
+                        <th>Customer id</th>
+                        <th>First name/Company name</th>
+                        <th>Last name</th>
+                        <th>Street name</th>
+                        <th>No.</th>
+                        <th>Postcode</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="customer in customers" ng-click="openCustomer(customer)">
+                        <td>{{customer.cpr_cvr}}</td>
+                        <td>{{customer.cpr_cvr}}</td>
+                        <td>{{customer.p_no}}</td>
+                        <td>{{customer.customerId}}</td>
+                        <td>{{customer.firstname}}</td>
+                        <td>{{customer.lastname}}</td>
+                        <td>{{customer.streetname}}</td>
+                        <td>{{customer.num}}</td>
+                        <td>{{customer.p_no}}</td>
+                        <td>{{customer.p_no}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
