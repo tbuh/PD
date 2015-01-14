@@ -43,6 +43,11 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/associate.html"
     });
 
+    $routeProvider.when("/employees", {
+        controller: "employeesController",
+        templateUrl: "/app/views/employees.html"
+    });
+
     $routeProvider.otherwise({ redirectTo: "/home" });
 
 });
