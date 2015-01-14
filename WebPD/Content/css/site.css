@@ -12,7 +12,12 @@ body {
   xpadding-bottom: 10px;
 }
 
-
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 1000px; 
+    height: 800px;
+    font-size:10px;
+}
 
 #footer {
     position: absolute;

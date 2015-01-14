@@ -10,6 +10,7 @@ namespace WebPD.API.Entities
 {
     public class EntitiesContext : DbContext
     {
+        public DbSet<Customer> Customers { get; set; }
         public EntitiesContext()
             : base(GetConnection("DefaultConnection"), contextOwnsConnection: true)
         {
