@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module('AngularAuthApp', ['ngRoute', 'LocalStorageModule', 'angular-loading-bar']);
+var app = angular.module('AngularAuthApp', ['ngRoute', 'ui.grid', 'LocalStorageModule', 'angular-loading-bar']);
 
 app.config(function ($routeProvider) {
 
@@ -21,6 +21,11 @@ app.config(function ($routeProvider) {
     $routeProvider.when("/orders", {
         controller: "ordersController",
         templateUrl: "/app/views/orders.html"
+    });
+
+    $routeProvider.when("/customers", {
+        controller: "customersController",
+        templateUrl: "/app/views/customers.html"
     });
 
     $routeProvider.when("/refresh", {
