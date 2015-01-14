@@ -15,6 +15,8 @@ namespace WebPD.API.Entities
         {
         }
 
+        public DbSet<Employee> Employees { get; set; }
+
         private static DbConnection GetConnection(string connectionStringName)
         {
             var setting = ConfigurationManager.ConnectionStrings[connectionStringName];
