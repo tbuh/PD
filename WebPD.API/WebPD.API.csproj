@@ -205,11 +205,11 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Entities\Customer.cs" />
-    <Compile Include="Entities\Employe.cs" />
+    <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\EntitiesContext.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Repositories\CustomersRepository.cs" />
-    <Compile Include="Entities\Repositories\EmployeRepository.cs" />
+    <Compile Include="Entities\Repositories\EmployeeRepository.cs" />
     <Compile Include="Entities\Repositories\EntityRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
