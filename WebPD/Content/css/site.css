@@ -63,3 +63,7 @@ body {
         border-top-right-radius: 0;
     }
 
+    .lalala {
+        display: inline;
+        width: 150px;
+    }

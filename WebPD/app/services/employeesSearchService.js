@@ -5,9 +5,13 @@ app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($htt
 
     var employeesSearchServiceFactory = {};
 
-    var _getEmployees = function () {
-        var id = Math.floor((Math.random() * 100) + 1);
-        return $http.get(serviceBase + 'api/employees/').then(function (results) {
+    var _getEmployees = function (searchParams) {
+
+        return $http({
+            url: serviceBase + 'api/employees/',
+            params: searchParams,
+            method: 'GET'
+        }).then(function (results) {
             return results;
         });
     };

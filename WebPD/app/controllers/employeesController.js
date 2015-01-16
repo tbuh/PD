@@ -2,13 +2,17 @@
 app.controller('employeesController', ['$scope', 'employeesSearchService', function ($scope, employeesSearchService) {
 
     $scope.employees = [];
+    $scope.searchParams = { firstName: '', lastName: '', city: '', country: '', extension: '' };
 
-    employeesSearchService.getEmployees().then(function (results) {
+    $scope.search = function () {
+        loadUsers();
+    };
 
-        $scope.employees = results.data;
-
-    }, function (error) {
-        alert(error.data.message + ', ' + error.data.exceptionMessage + ', '+ error.data.stackTrace);
-    });
+    function loadUsers() {
+        $scope.employees = null;
+        employeesSearchService.getEmployees($scope.searchParams).then(function (results) {
+            $scope.employees = results.data;
+        });
+    }
 
 }]);
