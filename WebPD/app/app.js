@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module('AngularAuthApp', ['ngRoute', 'ui.grid', 'LocalStorageModule', 'angular-loading-bar']);
+var app = angular.module('AngularAuthApp', ['ngRoute', 'ui.grid', 'ngDialog', 'LocalStorageModule', 'angular-loading-bar']);
 
 app.config(function ($routeProvider) {
 

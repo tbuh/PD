@@ -11,6 +11,4 @@ app.controller('customersController', ['$scope', 'customersService', function ($
     }, function (error) {
         //alert(error.data.message);
     });
-
-
 }]);
