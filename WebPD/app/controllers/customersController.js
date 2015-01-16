@@ -6,10 +6,9 @@ app.controller('customersController', ['$scope', 'customersService', function ($
     customersService.getCustomers().then(function (results) {
 
         $scope.customers = results.data;
+        $scope.gridOptions = { data: customers };
 
     }, function (error) {
         //alert(error.data.message);
     });
-
-
 }]);
