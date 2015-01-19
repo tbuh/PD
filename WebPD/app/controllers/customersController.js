@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('customersController', ['$scope', 'customersService', function ($scope, customersService) {
+app.controller('customersController', ['$scope', 'customersService', 'ngDialog', function ($scope, customersService, ngDialog) {
 
     $scope.customers = [];
 
@@ -11,4 +11,20 @@ app.controller('customersController', ['$scope', 'customersService', function ($
     }, function (error) {
         //alert(error.data.message);
     });
+
+    $scope.open = function () {
+        ngDialog.open({ template: 'ngDialogTemplate', controller: 'InsideCtrl', data: { foo: 'some data' } });
+    };
 }]);
+
+app.controller('InsideCtrl', function ($scope, ngDialog) {
+    $scope.dialogModel = {
+        message: 'message from passed scope'
+    };
+    $scope.insideDialogMethod = function () {
+        //do something
+    };
+    $scope.closeDialog = function () {
+        ngDialog.close();
+    };
+});

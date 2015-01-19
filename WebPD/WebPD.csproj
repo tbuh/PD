@@ -199,7 +199,10 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\ui-grid.svg" />
-    <Content Include="Content\ui-grid-stable.css" />
+    <Content Include="Content\ngDialog\ngDialog-theme-default.css" />
+    <Content Include="Content\ngDialog\ngDialog-theme-plain.css" />
+    <Content Include="Content\ngDialog\ngDialog.css" />
+    <Content Include="Content\ui-grid.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1004,10 +1007,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ngDialog.js" />
     <Content Include="Scripts\pdfmake.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\ui-grid-stable.js" />
+    <Content Include="Scripts\ui-grid.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
