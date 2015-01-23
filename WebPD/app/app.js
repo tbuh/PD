@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module('AngularAuthApp', ['ngRoute', 'ui.grid', 'ngDialog', 'LocalStorageModule', 'angular-loading-bar']);
+var app = angular.module('AngularAuthApp', ['ngRoute', 'ngDialog', 'ngDropdowns', 'ui.grid', 'ui.grid.resizeColumns', 'ui.grid.pinning', 'LocalStorageModule', 'angular-loading-bar']);
 
 app.config(function ($routeProvider) {
 
@@ -48,7 +48,7 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/employees.html"
     });
 
-    $routeProvider.otherwise({ redirectTo: "/home" });   
+    //$routeProvider.otherwise({ redirectTo: "/home" });   
 });
 
 var serviceBase = 'http://localhost:56445/';
