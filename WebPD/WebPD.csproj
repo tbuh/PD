@@ -179,6 +179,7 @@
     <Content Include="app\services\tokensManagerService.js" />
     <Content Include="app\views\associate.html" />
     <Content Include="app\views\customers.html" />
+    <Content Include="app\views\employeeEdit.html" />
     <Content Include="app\views\employees.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\login.html" />
