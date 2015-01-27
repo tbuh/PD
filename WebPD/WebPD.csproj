@@ -189,6 +189,7 @@
     <Content Include="app\views\tokens.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="authComplete.html" />
+    <Content Include="Content\angular-dropdowns.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\bootstrap.min.css" />
@@ -200,7 +201,10 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\ui-grid.svg" />
-    <Content Include="Content\ui-grid-stable.css" />
+    <Content Include="Content\ngDialog\ngDialog-theme-default.css" />
+    <Content Include="Content\ngDialog\ngDialog-theme-plain.css" />
+    <Content Include="Content\ngDialog\ngDialog.css" />
+    <Content Include="Content\ui-grid.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -212,6 +216,7 @@
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-csp.css" />
+    <Content Include="Scripts\angular-dropdowns.js" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
     <Content Include="Scripts\angular-local-storage.min.js" />
@@ -1005,10 +1010,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ngDialog.js" />
     <Content Include="Scripts\pdfmake.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\ui-grid-stable.js" />
+    <Content Include="Scripts\ui-grid.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
