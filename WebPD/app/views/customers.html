@@ -1,6 +1,6 @@
 ﻿<div class="row">
     <div class="col-md-12 col-md-push-0">
-        <a href="" class="btn btn-default" ng-click="open()">Open dialog</a>
+        <a href="" class="btn btn-default" ng-click="open()">Create new customer</a>
 
         <form ng-submit="searchCustomer()" style="margin-top:10px">
             <input type="text" ng-model="prms.customerID" class="form-control" placeholder="Customer ID..." />
@@ -23,13 +23,26 @@
 
 <script type="text/ng-template" id="ngDialogTemplate">
     <div class="ngdialog-message">
-        <h3>ngDialog template</h3>
-        <p ng-show="dialogModel.message">Scope passed through: <code>{{dialogModel.message}}</code></p>
+        <h3>New customer</h3>
     </div>
-    <div class="ngdialog-buttons">
-        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeDialog()">Close</button>
-        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="insideDialogMethod()">Do something</button>
-    </div>
+    <form ng-submit="saveCustomer()" style="margin-top:10px">
+        <!--<p ng-show="dialogModel.message">Scope passed through: <code>{{dialogModel.message}}</code></p>-->
+        <input type="text" ng-model="customer.customerID" class="form-control" placeholder="Customer ID..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.companyName" class="form-control" placeholder="Company name..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.contactName" class="form-control" placeholder="Contact name..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.contactTitle" class="form-control" placeholder="Contact title..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.address" class="form-control" placeholder="Address..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.city" class="form-control" placeholder="City..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.region" class="form-control" placeholder="Region..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.postalCode" class="form-control" placeholder="Postal code..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.country" class="form-control" placeholder="Country..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.phone" class="form-control" placeholder="Phone..." style="margin-bottom:10px" />
+        <input type="text" ng-model="customer.fax" class="form-control" placeholder="Fax..." style="margin-bottom:10px" />
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeDialog()">Close</button>
+            <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="saveCustomer()">Save</button>
+        </div>
+    </form>
 </script>
 
 <script type="text/ng-template" id="secondDialogId">
@@ -50,8 +63,8 @@
         background-color: #ffffff;
         border: 1px solid #cccccc;
         border-radius: 1px;
-        font-weight:normal;
+        font-weight: normal;
         color: #555555;
-        z-index:1;
+        z-index: 1;
     }
 </style>
