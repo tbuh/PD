@@ -49,7 +49,7 @@ app.config(function ($routeProvider) {
     });
 
     $routeProvider.when("/employeeEdit/:id", {
-        controller: "employeesController",
+        controller: "employeeEditController",
         templateUrl: "/app/views/employeeEdit.html"
     });
 

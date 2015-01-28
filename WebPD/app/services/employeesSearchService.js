@@ -17,11 +17,11 @@ app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($htt
     };
 
 
-    var _getEmployeesById = function (employee) {
+    var _getEmployeeById = function (employeeId) {
 
         return $http({
-            url: serviceBase + 'api/employees/',
-            params:employee,
+            url: serviceBase + 'api/employees/' + employeeId,
+            //params: employeeId,
             method: 'GET'
         }).then(function (results) {
             return results;
@@ -43,7 +43,7 @@ app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($htt
 
 
     employeesSearchServiceFactory.getEmployees = _getEmployees;
-    employeesSearchServiceFactory.getEmployeesById = _getEmployeesById;
+    employeesSearchServiceFactory.getEmployeeById = _getEmployeeById;
     employeesSearchServiceFactory.editEmployee = _editEmployee;
 
     return employeesSearchServiceFactory;
