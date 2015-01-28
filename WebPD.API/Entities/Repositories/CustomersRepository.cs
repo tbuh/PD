@@ -20,5 +20,11 @@ namespace WebPD.API.Entities.Repositories
                 ).ToList();
             return res;
         }
+
+        public void Add(Customer customer)
+        {
+            _entitiesContext.Customers.Add(customer);
+            _entitiesContext.SaveChanges();
+        }
     }
 }
