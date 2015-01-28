@@ -60,7 +60,7 @@ namespace WebPD.API.Controllers
         }
 
         [HttpPut]
-        public void Edit([FromBody]Employee employee, int id)
+        public void Edit([FromBody]Employee employee)
         {
             EntitiesContext context = new EntitiesContext();
             Employee employeeToEdit = context.Employees.Find(employee.EmployeeID);
