@@ -1,4 +1,5 @@
-﻿<div class="form-horizontal">
+﻿
+<div class="form-horizontal">
 
     <div class="row">
 
@@ -47,7 +48,7 @@
                         {{ employee.extension}}
                     </td>
                     <td>
-                        <p><a ng-click="editItems()">Edit</a> | <a>Delete</a></p>
+                        <p><a href="#/employeeEdit/{{ employee.employeeID}}">Edit</a> | <a>Delete</a></p>
                     </td>
                 </tr>
             </tbody>
@@ -55,4 +56,3 @@
     </div>
 
 </div>
-

@@ -48,6 +48,11 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/employees.html"
     });
 
+    $routeProvider.when("/employeeEdit/:id", {
+        controller: "employeeEditController",
+        templateUrl: "/app/views/employeeEdit.html"
+    });
+
     //$routeProvider.otherwise({ redirectTo: "/home" });   
 });
 
