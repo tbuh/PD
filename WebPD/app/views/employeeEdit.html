@@ -1,21 +1,20 @@
-﻿<div ng-controller="employeesController as vm">
+﻿<div>
     <div class="form-horizontal">
-        <div ng-repeat="e in vm.editEmployee">
-            wqeeqwe
-        </div>
-        <div class="row">
-            asdasdasd
-            {{searchParams.firstName}}
-            <input type="text" class="col-md-2" ng-model="employeeID">
-            <input type="text" class="col-md-2" ng-model="editEmployee.firstName" placeholder="First Name...">
-            <input type="text" class="col-md-2" ng-model="editEmployee.lastName" placeholder="Last Name...">
-            <input type="text" class="col-md-2" ng-model="editEmployee.city" placeholder="City...">
-            <input type="text" class="col-md-2" ng-model="editEmployee.country" placeholder="Country...">
-            <input type="text" class="col-md-2" ng-model="editEmployee.extension" placeholder="Extension...">
 
-            <button class="btn btn-default" type="submit" style="line-height:7px;padding:14px;margin-bottom:5px;margin-left:5px;width:190px;background-color:rgba(0, 139, 185, 1);color:white">
-                <strong>Search</strong>
-            </button>
-        </div>
     </div>
+    <div class="row">
+
+        <input type="text" class="col-md-2" ng-model="employeeID" ng-readonly="true">
+        <input type="text" class="col-md-2" ng-model="editEmployee.firstName" placeholder="First Name...">
+        <input type="text" class="col-md-2" ng-model="editEmployee.lastName" placeholder="Last Name...">
+        <input type="text" class="col-md-2" ng-model="editEmployee.city" placeholder="City...">
+        <input type="text" class="col-md-2" ng-model="editEmployee.country" placeholder="Country...">
+        <input type="text" class="col-md-2" ng-model="editEmployee.extension" placeholder="Extension...">
+
+        
+    </div>
+   
 </div>
+<button class="" type="submit" ng-click="updateEmployee()" style="line-height:7px;padding:14px;margin-bottom:5px;float:right; width:190px;background-color:rgba(0, 139, 185, 1);color:white">
+    <strong>Save</strong>
+</button>

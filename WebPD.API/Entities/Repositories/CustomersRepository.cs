@@ -4,13 +4,8 @@ using System.Linq;
 
 namespace WebPD.API.Entities.Repositories
 {
-    public class CustomersRepository : EntityRepository
+    public class CustomersRepository : EntityRepository<Customer>
     {
-        public IEnumerable<Customer> List()
-        {
-            return _entitiesContext.Set<Customer>().ToList();
-        }
-
         public IEnumerable<Customer> ListWithParams(Customer customer)
         {
             var res = _entitiesContext.Set<Customer>().Where(cust =>

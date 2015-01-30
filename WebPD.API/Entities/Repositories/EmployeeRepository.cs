@@ -5,15 +5,11 @@ using System.Linq;
 
 namespace WebPD.API.Entities.Repositories
 {
-    public class EmployeeRepository : EntityRepository
+    public class EmployeeRepository : EntityRepository<Employee>
     {
         public EmployeeRepository()
         {
 
-        }
-        public IEnumerable<Employee> List()
-        {
-            return _entitiesContext.Employees;
         }
     }
 }

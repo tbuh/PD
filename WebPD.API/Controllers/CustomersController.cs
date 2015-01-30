@@ -54,7 +54,7 @@ namespace WebPD.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            _customersRepository.Add(customer);
+            _customersRepository.Save(customer);
             return CreatedAtRoute("DefaultApi", new { id = customer.CustomerID }, customer); ;
         }
     }

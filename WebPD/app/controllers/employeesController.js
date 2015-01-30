@@ -1,7 +1,7 @@
 ﻿'use strict';
 app.controller('employeesController', ['$scope', 'employeesSearchService', function ($scope, employeesSearchService) {
 
-    $scope.employees = [];    
+    $scope.employees = [];
     $scope.searchParams = { firstName: '', lastName: '', city: '', country: '', extension: '' };
 
     $scope.search = function () {
@@ -13,7 +13,7 @@ app.controller('employeesController', ['$scope', 'employeesSearchService', funct
         employeesSearchService.getEmployees($scope.searchParams).then(function (results) {
             $scope.employees = results.data;
         });
-    }    
+    }
 }]);
 
 app.controller('employeeEditController', ['$scope', 'employeesSearchService', 'ngDialog', '$routeParams', function ($scope, employeesSearchService, ngDialog, $routeParams) {
@@ -39,5 +39,15 @@ app.controller('employeeEditController', ['$scope', 'employeesSearchService', 'n
     };
 
     getById($scope.employeeID);
+
+
+    $scope.updateEmployee = function () {        
+        var promisePutEmployee = employeesSearchService.updateEmployee($routeParams.id, $scope.editEmployee);
+        promisePutEmployee.then(function (result) {
+
+        });
+    };
+
+
 
 }]);

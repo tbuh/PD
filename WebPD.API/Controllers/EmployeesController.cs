@@ -50,7 +50,7 @@ namespace WebPD.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet]        
+        [HttpGet]
         public Employee Get(int id)
         {
             var searchEmployee = from employee in _employeeRepository.List()
@@ -73,16 +73,23 @@ namespace WebPD.API.Controllers
             }
         }
 
+        // //update employee
         [HttpPut]
-        public void Edit([FromBody]Employee employee)
+        public IHttpActionResult Edit(int id, Employee employee)
         {
-            EntitiesContext context = new EntitiesContext();
-            Employee employeeToEdit = context.Employees.Find(employee.EmployeeID);
-            context.Employees.Remove(employeeToEdit);
-            var updatedEmployee = employee;
-            context.Employees.Add(updatedEmployee);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            context.SaveChanges();
+            if (id != employee.EmployeeID)
+            {
+                return BadRequest();
+            }
+
+            _employeeRepository.Save(employee);
+
+            return StatusCode(HttpStatusCode.NoContent);
         }
     }
 }
