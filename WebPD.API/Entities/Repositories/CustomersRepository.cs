@@ -26,5 +26,11 @@ namespace WebPD.API.Entities.Repositories
             _entitiesContext.Customers.Add(customer);
             _entitiesContext.SaveChanges();
         }
+
+        public void Delete(string customerID)
+        {
+            _entitiesContext.Customers.Remove(_entitiesContext.Customers.FirstOrDefault(customer => customer.CustomerID.Equals(customerID)));
+            _entitiesContext.SaveChanges();
+        }
     }
 }

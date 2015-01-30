@@ -18,8 +18,16 @@ app.factory('customersService', ['$http', 'ngAuthSettings', function ($http, ngA
         });
     }
 
+    //Delete the record
+    var _deleteCustomer = function (customerID) {
+        return $http.delete(serviceBase + "api/customers/" + customerID).then(function (results) {
+            return results;
+        });
+    }
+
     customersServiceFactory.getCustomers = _getCustomers;
     customersServiceFactory.saveCustomer = _saveCustomer;
+    customersServiceFactory.deleteCustomer = _deleteCustomer;
 
     return customersServiceFactory;
 
