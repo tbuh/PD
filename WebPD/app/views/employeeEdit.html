@@ -1,20 +1,19 @@
-﻿<div>
-    <div class="form-horizontal">
+﻿<div class="row">
+    <fieldset>
+        <legend>Edit Employee</legend>
 
-    </div>
-    <div class="row">
+        <input type="text" class="form-control" ng-model="employeeID" ng-readonly="true">
+        <input type="text" class="form-control" ng-model="editEmployee.firstName" placeholder="First Name...">
+        <input type="text" class="form-control" ng-model="editEmployee.lastName" placeholder="Last Name...">
+        <input type="text" class="form-control" ng-model="editEmployee.city" placeholder="City...">
+        <input type="text" class="form-control" ng-model="editEmployee.country" placeholder="Country...">
+        <input type="text" class="form-control" ng-model="editEmployee.extension" placeholder="Extension...">
 
-        <input type="text" class="col-md-2" ng-model="employeeID" ng-readonly="true">
-        <input type="text" class="col-md-2" ng-model="editEmployee.firstName" placeholder="First Name...">
-        <input type="text" class="col-md-2" ng-model="editEmployee.lastName" placeholder="Last Name...">
-        <input type="text" class="col-md-2" ng-model="editEmployee.city" placeholder="City...">
-        <input type="text" class="col-md-2" ng-model="editEmployee.country" placeholder="Country...">
-        <input type="text" class="col-md-2" ng-model="editEmployee.extension" placeholder="Extension...">
 
-        
-    </div>
-   
+        <div class="button-search">
+            <button type="submit" class="btn btn-md btn-info" ng-click="updateEmployee()">
+                <strong>Save</strong>
+            </button>
+        </div>
+    </fieldset>
 </div>
-<button class="" type="submit" ng-click="updateEmployee()" style="line-height:7px;padding:14px;margin-bottom:5px;float:right; width:190px;background-color:rgba(0, 139, 185, 1);color:white">
-    <strong>Save</strong>
-</button>

@@ -8,6 +8,11 @@ app.controller('employeesController', ['$scope', 'employeesSearchService', funct
         loadUsers();
     };
 
+    $scope.reset = function () {
+        $scope.searchParams = { firstName: '', lastName: '', city: '', country: '', extension: '' };
+        $scope.employees = [];
+    };
+
     function loadUsers() {
         $scope.employees = null;
         employeesSearchService.getEmployees($scope.searchParams).then(function (results) {
@@ -41,10 +46,10 @@ app.controller('employeeEditController', ['$scope', 'employeesSearchService', 'n
     getById($scope.employeeID);
 
 
-    $scope.updateEmployee = function () {        
+    $scope.updateEmployee = function () {
         var promisePutEmployee = employeesSearchService.updateEmployee($routeParams.id, $scope.editEmployee);
         promisePutEmployee.then(function (result) {
-
+            window.location.href = "#/employees";
         });
     };
 
