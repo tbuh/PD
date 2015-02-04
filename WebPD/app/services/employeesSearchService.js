@@ -20,7 +20,7 @@ app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($htt
     var _getEmployeeById = function (employeeId) {
 
         return $http({
-            url: serviceBase + 'api/employees/' + employeeId,
+            url: serviceBase + 'api/employees/details/' + employeeId,
             //params: employeeId,
             method: 'GET'
         }).then(function (results) {

@@ -50,13 +50,18 @@ namespace WebPD.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet]        
+        [HttpGet]
         public Employee Get(int id)
         {
-            var searchEmployee = from employee in _employeeRepository.List()
-                                 where employee.EmployeeID == id
-                                 select employee;
-            return searchEmployee.FirstOrDefault();
+            var empl = _employeeRepository.List().FirstOrDefault(emp => emp.EmployeeID == id);
+            return empl;
+        }
+
+        [HttpGet]
+        public Employee Details(int id)
+        {
+            var empl = _employeeRepository.Details(id);
+            return empl;
         }
 
         private string SafeLower<T>(T value)

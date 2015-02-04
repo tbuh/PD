@@ -15,5 +15,11 @@ namespace WebPD.API.Entities.Repositories
         {
             return _entitiesContext.Employees;
         }
+
+        public Employee Details(int id)
+        {
+            var empl = _entitiesContext.Employees.Include(emp => emp.Orders).FirstOrDefault(emp => emp.EmployeeID == id);
+            return empl;
+        }
     }
 }
