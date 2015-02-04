@@ -53,6 +53,13 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/employeeEdit.html"
     });
 
+    $routeProvider.when("/employeeDeteil/:id" , {
+        controller: "employeeDeteilController",
+        templateUrl: "/app/views/employeeDeteil.html"
+    });
+
+
+
     //$routeProvider.otherwise({ redirectTo: "/home" });   
 });
 

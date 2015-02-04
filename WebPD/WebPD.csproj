@@ -179,6 +179,7 @@
     <Content Include="app\services\tokensManagerService.js" />
     <Content Include="app\views\associate.html" />
     <Content Include="app\views\customers.html" />
+    <Content Include="app\views\employeeDeteil.html" />
     <Content Include="app\views\employeeEdit.html" />
     <Content Include="app\views\employees.html" />
     <Content Include="app\views\home.html" />
@@ -201,6 +202,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\ui-grid.svg" />
+    <Content Include="Content\Image\empl.png" />
     <Content Include="Content\ngDialog\ngDialog-theme-default.css" />
     <Content Include="Content\ngDialog\ngDialog-theme-plain.css" />
     <Content Include="Content\ngDialog\ngDialog.css" />
