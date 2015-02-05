@@ -25,7 +25,7 @@ app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($htt
             method: 'GET'
         }).then(function (results) {
             return results;
-        });
+        });        
     };
 
 

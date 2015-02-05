@@ -58,6 +58,7 @@ namespace WebPD.API.Controllers
         }
 
         [HttpGet]
+        [Route("details/{id}")]
         public Employee Details(int id)
         {
             var empl = _employeeRepository.Details(id);

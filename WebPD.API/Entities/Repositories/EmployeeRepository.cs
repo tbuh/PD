@@ -11,15 +11,17 @@ namespace WebPD.API.Entities.Repositories
         {
 
         }
-        public IEnumerable<Employee> List()
-        {
-            return _entitiesContext.Employees;
-        }
 
         public Employee Details(int id)
         {
-            var empl = _entitiesContext.Employees.Include(emp => emp.Orders).FirstOrDefault(emp => emp.EmployeeID == id);
-            return empl;
+            var result = _entitiesContext.Employees.Where(empl => empl.EmployeeID == id).Select(empl => new
+            {
+                Employee = empl,
+                Orders = empl.Orders.OrderBy(o => o.OrderDate).Take(10)
+            });
+
+            var employee = result.FirstOrDefault();
+            return employee.Employee;
         }
     }
 }
