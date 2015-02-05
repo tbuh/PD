@@ -16,6 +16,17 @@ namespace WebPD.API.Entities
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Order>()
+                .HasKey(o => o.OrderID)
+                .HasRequired(o => o.Employee)
+                .WithMany(e => e.Orders)
+                .HasForeignKey(o => o.EmployeeId); 
+        }
+
         public DbSet<Employee> Employees { get; set; }
 
         private static DbConnection GetConnection(string connectionStringName)

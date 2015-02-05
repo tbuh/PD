@@ -4,8 +4,13 @@ using System.Linq;
 
 namespace WebPD.API.Entities.Repositories
 {
-    public class CustomersRepository : EntityRepository<Customer>
+    public class CustomersRepository : EntityRepository
     {
+        public IEnumerable<Customer> List()
+        {
+            return _entitiesContext.Set<Customer>().ToList();
+        }
+
         public IEnumerable<Customer> ListWithParams(Customer customer)
         {
             var res = _entitiesContext.Set<Customer>().Where(cust =>
@@ -19,12 +24,6 @@ namespace WebPD.API.Entities.Repositories
         public void Add(Customer customer)
         {
             _entitiesContext.Customers.Add(customer);
-            _entitiesContext.SaveChanges();
-        }
-
-        public void Delete(string customerID)
-        {
-            _entitiesContext.Customers.Remove(_entitiesContext.Customers.FirstOrDefault(customer => customer.CustomerID.Equals(customerID)));
             _entitiesContext.SaveChanges();
         }
     }

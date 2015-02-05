@@ -53,10 +53,15 @@ namespace WebPD.API.Controllers
         [HttpGet]
         public Employee Get(int id)
         {
-            var searchEmployee = from employee in _employeeRepository.List()
-                                 where employee.EmployeeID == id
-                                 select employee;
-            return searchEmployee.FirstOrDefault();
+            var empl = _employeeRepository.List().FirstOrDefault(emp => emp.EmployeeID == id);
+            return empl;
+        }
+
+        [HttpGet]
+        public Employee Details(int id)
+        {
+            var empl = _employeeRepository.Details(id);
+            return empl;
         }
 
         private string SafeLower<T>(T value)
@@ -73,23 +78,16 @@ namespace WebPD.API.Controllers
             }
         }
 
-        // //update employee
         [HttpPut]
-        public IHttpActionResult Edit(int id, Employee employee)
+        public void Edit([FromBody]Employee employee)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            EntitiesContext context = new EntitiesContext();
+            Employee employeeToEdit = context.Employees.Find(employee.EmployeeID);
+            context.Employees.Remove(employeeToEdit);
+            var updatedEmployee = employee;
+            context.Employees.Add(updatedEmployee);
 
-            if (id != employee.EmployeeID)
-            {
-                return BadRequest();
-            }
-
-            _employeeRepository.Save(employee);
-
-            return StatusCode(HttpStatusCode.NoContent);
+            context.SaveChanges();
         }
     }
 }

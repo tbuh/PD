@@ -20,7 +20,7 @@ app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($htt
     var _getEmployeeById = function (employeeId) {
 
         return $http({
-            url: serviceBase + 'api/employees/' + employeeId,
+            url: serviceBase + 'api/employees/details/' + employeeId,
             //params: employeeId,
             method: 'GET'
         }).then(function (results) {
@@ -31,10 +31,10 @@ app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($htt
 
 
 
-    var _updateEmployee = function (employeeId, employee) {
+    var _editEmployee = function (id, employee) {
         return $http({
-            url: serviceBase + 'api/employees/' + employeeId,
-            data: employee,
+            url: serviceBase + 'api/employees/' + employee,
+            params: 'employee',
             method: 'PUT'
         }).then(function (results) {
             return results;
@@ -44,7 +44,7 @@ app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($htt
 
     employeesSearchServiceFactory.getEmployees = _getEmployees;
     employeesSearchServiceFactory.getEmployeeById = _getEmployeeById;
-    employeesSearchServiceFactory.updateEmployee = _updateEmployee;
+    employeesSearchServiceFactory.editEmployee = _editEmployee;
 
     return employeesSearchServiceFactory;
 

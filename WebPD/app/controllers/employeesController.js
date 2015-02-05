@@ -8,11 +8,6 @@ app.controller('employeesController', ['$scope', 'employeesSearchService', '$loc
         loadUsers();
     };
 
-    $scope.reset = function () {
-        $scope.searchParams = { firstName: '', lastName: '', city: '', country: '', extension: '' };
-        $scope.employees = [];
-    };
-
     function loadUsers() {
         $scope.employees = null;
         employeesSearchService.getEmployees($scope.searchParams).then(function (results) {
