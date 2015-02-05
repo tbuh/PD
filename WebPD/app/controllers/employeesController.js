@@ -1,11 +1,16 @@
 ﻿'use strict';
 app.controller('employeesController', ['$scope', 'employeesSearchService', '$location', function ($scope, employeesSearchService, $location) {
 
-    $scope.employees = [];
+    $scope.employees = [];    
     $scope.searchParams = { firstName: '', lastName: '', city: '', country: '', extension: '' };
 
     $scope.search = function () {
         loadUsers();
+    };
+
+    $scope.reset = function () {
+        $scope.searchParams = { firstName: '', lastName: '', city: '', country: '', extension: '' };
+        $scope.employees = [];
     };
 
     function loadUsers() {
@@ -13,7 +18,7 @@ app.controller('employeesController', ['$scope', 'employeesSearchService', '$loc
         employeesSearchService.getEmployees($scope.searchParams).then(function (results) {
             $scope.employees = results.data;
         });
-    }
+    }    
 
     $scope.selectEmployee = function (employee) {
         $location.path("/employeeDeteil/" + employee.employeeID);
@@ -76,6 +81,16 @@ app.controller('employeeDeteilController', ['$scope', 'employeesSearchService', 
 
     getById($scope.employeeID);
 
+
+
+
+
+    $scope.updateEmployee = function () {
+        var promisePutEmployee = employeesSearchService.updateEmployee($routeParams.id, $scope.editEmployee);
+        promisePutEmployee.then(function (result) {
+            window.location.href = "#/employees";
+        });
+    };
 
 
 
