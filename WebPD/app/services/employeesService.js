@@ -1,9 +1,9 @@
 ﻿'use strict';
-app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($http, ngAuthSettings) {
+app.factory('employeesService', ['$http', 'ngAuthSettings', function ($http, ngAuthSettings) {
 
     var serviceBase = ngAuthSettings.apiServiceBaseUri;
 
-    var employeesSearchServiceFactory = {};
+    var employeesServiceFactory = {};
 
     var _getEmployees = function (searchParams) {
 
@@ -42,10 +42,10 @@ app.factory('employeesSearchService', ['$http', 'ngAuthSettings', function ($htt
     };
 
 
-    employeesSearchServiceFactory.getEmployees = _getEmployees;
-    employeesSearchServiceFactory.getEmployeeById = _getEmployeeById;
-    employeesSearchServiceFactory.updateEmployee = _updateEmployee;
+    employeesServiceFactory.getEmployees = _getEmployees;
+    employeesServiceFactory.getEmployeeById = _getEmployeeById;
+    employeesServiceFactory.updateEmployee = _updateEmployee;
 
-    return employeesSearchServiceFactory;
+    return employeesServiceFactory;
 
 }]);

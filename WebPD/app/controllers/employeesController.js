@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('employeesController', ['$scope', 'employeesSearchService', '$location', function ($scope, employeesSearchService, $location) {
+app.controller('employeesController', ['$scope', 'employeesService', '$location', function ($scope, employeesService, $location) {
 
     $scope.employees = [];    
     $scope.searchParams = { firstName: '', lastName: '', city: '', country: '', extension: '' };
@@ -15,7 +15,7 @@ app.controller('employeesController', ['$scope', 'employeesSearchService', '$loc
 
     function loadUsers() {
         $scope.employees = null;
-        employeesSearchService.getEmployees($scope.searchParams).then(function (results) {
+        employeesService.getEmployees($scope.searchParams).then(function (results) {
             $scope.employees = results.data;
         });
     }    
@@ -26,13 +26,13 @@ app.controller('employeesController', ['$scope', 'employeesSearchService', '$loc
 
 }]);
 
-app.controller('employeeEditController', ['$scope', 'employeesSearchService', '$routeParams', function ($scope, employeesSearchService, $routeParams) {
+app.controller('employeeEditController', ['$scope', 'employeesService', '$routeParams', function ($scope, employeesService, $routeParams) {
 
     $scope.employeeID = $routeParams.id;
     $scope.editEmployee = { firstName: '', lastName: '', city: '', country: '', extension: '' };
 
     function getById(employeeId) {
-        employeesSearchService.getEmployeeById(employeeId).then(function (result) {
+        employeesService.getEmployeeById(employeeId).then(function (result) {
             $scope.editEmployee = result.data;
         },
          function (response) {
@@ -52,18 +52,18 @@ app.controller('employeeEditController', ['$scope', 'employeesSearchService', '$
 
 
     $scope.updateEmployee = function () {
-        var promisePutEmployee = employeesSearchService.updateEmployee($routeParams.id, $scope.editEmployee);
+        var promisePutEmployee = employeesService.updateEmployee($routeParams.id, $scope.editEmployee);
         promisePutEmployee.then(function (result) {
             window.location.href = "#/employees";
         });
     };
 }]);
 
-app.controller('employeeDeteilController', ['$scope', 'employeesSearchService', '$routeParams', function ($scope, employeesSearchService, $routeParams) {
+app.controller('employeeDeteilController', ['$scope', 'employeesService', '$routeParams', function ($scope, employeesService, $routeParams) {
 
     $scope.employeeID = $routeParams.id;
     function getById(employeeId) {
-        employeesSearchService.getEmployeeById(employeeId).then(function (result) {
+        employeesService.getEmployeeById(employeeId).then(function (result) {
             $scope.EmployeeDeteil = result.data;
         },
          function (response) {
@@ -86,7 +86,7 @@ app.controller('employeeDeteilController', ['$scope', 'employeesSearchService', 
 
 
     $scope.updateEmployee = function () {
-        var promisePutEmployee = employeesSearchService.updateEmployee($routeParams.id, $scope.editEmployee);
+        var promisePutEmployee = employeesService.updateEmployee($routeParams.id, $scope.editEmployee);
         promisePutEmployee.then(function (result) {
             window.location.href = "#/employees";
         });
